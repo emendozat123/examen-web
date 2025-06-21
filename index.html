@@ -1,26 +1,54 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Examen Interactivo - Desarrollo Web</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen de Desarrollo de Entornos Web</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Examen Interactivo: HTML, CSS, JS, DOM y Local Storage</h1>
-    <div id="progress-bar"><div id="progress"></div></div>
-    <div id="quiz-container">
-      <p id="question-text"></p>
-      <div id="answers"></div>
-      <div id="feedback"></div>
-      <button id="next-btn" disabled>Siguiente</button>
+    <div class="container">
+        <h1>Examen de Tecnologías Web</h1>
+        <div id="intro-screen">
+            <h2>Segunda Especialidad en Educación e Informática</h2>
+            <div class="form-group">
+                <label for="nombre">Nombres:</label>
+                <input type="text" id="nombre" required>
+            </div>
+            <div class="form-group">
+                <label for="apellidos">Apellidos:</label>
+                <input type="text" id="apellidos" required>
+            </div>
+            <button id="start-exam">Iniciar Examen</button>
+            <div class="instructions">
+                <h3>Instrucciones:</h3>
+                <ul>
+                    <li>Tienes 45 minutos para completar el examen</li>
+                    <li>Solo se permite un intento</li>
+                    <li>No se puede retroceder después de responder</li>
+                    <li>Al finalizar se mostrarán las respuestas correctas</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="exam-screen" class="hidden">
+            <div class="exam-header">
+                <div id="student-info"></div>
+                <div id="timer">Tiempo restante: 45:00</div>
+            </div>
+            <div id="question-container"></div>
+            <button id="submit-exam" class="hidden">Finalizar Examen</button>
+        </div>
+
+        <div id="results-screen" class="hidden">
+            <h2>Resultados del Examen</h2>
+            <div id="student-result-info"></div>
+            <div id="score-display"></div>
+            <div id="feedback-container"></div>
+            <button id="restart-exam">Volver al Inicio</button>
+        </div>
     </div>
-    <div id="summary" class="hidden">
-      <h2>Resumen</h2>
-      <p id="score"></p>
-    </div>
-  </div>
-  <script src="script.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
